@@ -103,7 +103,7 @@
                             <div class="space-y-2">
                                 <i data-lucide="upload-cloud" class="mx-auto text-gray-400"></i>
                                 <p class="text-sm text-gray-500">Klike pou chwazi fichye a oswa rale l isit la</p>
-                                <p class="text-xs text-gray-400">JPG, PNG oswa PDF (Max 5MB)</p>
+                                <p class="text-xs text-gray-400">JPG, PNG oswa PDF (Max 50MB)</p>
                             </div>
                         </div>
                     </div>
@@ -240,8 +240,8 @@
                 const fileInput = form.querySelector('input[name="paymentProof"]');
                 if (fileInput.files && fileInput.files[0]) {
                     const file = fileInput.files[0];
-                    if (file.size > 5 * 1024 * 1024) { // 5MB limit
-                        throw new Error('Fichye a twò gro (Max 5MB)');
+                    if (file.size > 50 * 1024 * 1024) { // 50MB limit
+                        throw new Error('Fichye a twò gro (Max 50MB)');
                     }
                     data.paymentProof = await fileToBase64(file);
                 }
