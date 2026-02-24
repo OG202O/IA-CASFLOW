@@ -276,7 +276,8 @@
                     if (file.size > 50 * 1024 * 1024) { // 50MB limit
                         throw new Error('Fichye a twò gro (Max 50MB)');
                     }
-                    data.paymentProof = await fileToBase64(file);
+                    // Send just the file name, not the full Base64
+                    data.paymentProof = file.name;
                 }
 
                 // Send to Google Apps Script
