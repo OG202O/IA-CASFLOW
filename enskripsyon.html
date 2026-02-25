@@ -293,13 +293,29 @@
                     }
                 });
 
-                const result = await response.json();
+                // Try parse JSON safely; if server returns non-JSON, surface a helpful error
+                let result = null;
+                try {
+                    // If response is not OK, still try to get JSON error message
+                    const text = await response.text();
+                    try {
+                        result = text ? JSON.parse(text) : {};
+                    } catch (parseErr) {
+                        throw new Error('Repons sèvè a pa retounen JSON valide: ' + text.substring(0, 200));
+                    }
 
-                if (result.success) {
+                    if (!response.ok) {
+                        throw new Error(result.error || ('Sèvè erè: ' + response.status + ' ' + response.statusText));
+                    }
+                } catch (err) {
+                    throw err;
+                }
+
+                if (result && result.success) {
                     document.getElementById('successModal').classList.remove('hidden');
                     form.reset();
                 } else {
-                    showErrorModal(result.error || 'Yon erre rive. Eseye ankò.');
+                    showErrorModal((result && result.error) ? result.error : 'Yon erre rive. Eseye ankò.');
                 }
             } catch (error) {
                 console.error('Error:', error);
