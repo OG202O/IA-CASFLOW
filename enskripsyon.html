@@ -1,368 +1,67 @@
-<!DOCTYPE html>
-<html lang="ht">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enskripsyon - IA CASHFLOW</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        .gradient-bg { background: linear-gradient(135deg, #004e92 0%, #000428 100%); }
-        .glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
-        .whatsapp-green { background-color: #25D366; }
-        .whatsapp-green:hover { background-color: #128C7E; }
-    </style>
-</head>
-<body class="bg-gray-50 text-gray-900">
+<section id="inscription" class="registration-section">
+  <div class="form-wrapper">
+    <h2>Fòmilè Enskripsyon</h2>
+    <p>Ranpli fòm sa a pou w rezève plas ou kounye a.</p>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition">
-                    <img src="https://raw.githubusercontent.com/OG202O/IA-CASFLOW/main/Logo_for_OG_Connect_-_Modern_Wordmark__1_-removebg-preview.png" alt="GoConnect Logo" class="h-10" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 class=%22h-6 w-6%22 fill=%22none%22 viewBox=%220 0 24 24%22 stroke=%22currentColor%22%3E%3Cpath stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%222%22 d=%22M13 10V3L4 14h7v7l9-11h-7z%22/%3E%3C/svg%3E'">
-                    <span class="text-xl font-bold tracking-tighter text-blue-900 uppercase">GoConnect</span>
-                </a>
-            </div>
-            <div class="hidden md:flex gap-8 font-medium">
-                <a href="programming.html" class="hover:text-blue-600 transition">Pwogram</a>
-                <a href="events.html" class="hover:text-blue-600 transition">Dat & Kote</a>
-                <a href="trainer.html" class="hover:text-blue-600 transition">Fòmatè</a>
-                <a href="pricing.html" class="hover:text-blue-600 transition font-bold text-blue-600">Tarif</a>
-            </div>
-            <a href="enskripsyon.html" class="bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition shadow-lg">Enskri Kounye a</a>
-        </div>
-    </nav>
+    <form 
+      action="https://formspree.io/f/mzdjonlb" 
+      method="POST"
+      enctype="multipart/form-data"
+      class="registration-form"
+    >
 
-    <!-- Hero Section -->
-    <header class="pt-32 pb-20 gradient-bg text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
-            <span class="bg-blue-500/20 text-blue-300 px-4 py-1 rounded-full text-sm font-semibold mb-6 border border-blue-500/30">FÒMASYON EXKLIZIV 2026</span>
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-                IA <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">CASHFLOW</span>
-            </h1>
-            <p class="text-xl md:text-2xl mb-10 text-gray-300 max-w-3xl">
-                Ranpli fòm nan pou w rezève plas ou epi fè patni fòmasyon transformatif sa a.
-            </p>
-        </div>
-    </header>
+      <!-- CONFIG -->
+      <input type="hidden" name="_subject" value="Nouvelle inscription IA CASHFLOW">
+      <input type="hidden" name="_redirect" value="https://og202o.github.io/IA-CASFLOW/merci.html">
+      <input type="text" name="_gotcha" style="display:none">
 
-    <!-- Enskripsyon Section -->
-    <section class="py-24 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gradient-to-br from-blue-50 to-teal-50 rounded-3xl shadow-2xl p-8 md:p-12">
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl font-bold text-blue-900">Fòmilè Enskripsyon</h2>
-                    <p class="text-gray-600 mt-2">Ranpli fòm sa a pou w rezève plas ou kounye a. Tou frè yo obligatwa.</p>
-                </div>
+      <!-- CHAMPS -->
+      <div class="field">
+        <label>Siyati</label>
+        <input type="text" name="signature" required>
+      </div>
 
-                <form id="registrationForm" class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Siyati</label>
-                            <input type="text" name="nom" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none transition" placeholder="Siyati w">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Non</label>
-                            <input type="text" name="prenom" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none transition" placeholder="Non w">
-                        </div>
-                    </div>
+      <div class="field">
+        <label>Nom complet</label>
+        <input type="text" name="nom" required>
+      </div>
 
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
-                            <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none transition" placeholder="eg: nonw@gmail.com">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Telefòn (WhatsApp)</label>
-                            <div class="flex gap-2">
-                                <input type="text" value="+509" disabled class="w-20 px-4 py-3 rounded-xl border border-gray-300 bg-gray-100 text-gray-600 font-semibold focus:ring-2 focus:ring-blue-500 outline-none transition text-center">
-                                <input type="tel" name="telephone" required pattern="[0-9]{8}" class="flex-1 px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none transition" placeholder="XXXXXXXX">
-                            </div>
-                            <p class="text-xs text-gray-500 mt-2">Antre 8 nimewo san "+509"</p>
-                        </div>
-                    </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" name="email" required>
+      </div>
 
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Laj</label>
-                            <input type="number" name="age" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none transition" placeholder="Laj ou">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Vil kote w prale a</label>
-                            <select id="selectedZone" name="zone" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none transition">
-                                <option value="">Chwazi yon vil...</option>
-                                <option value="Léogâne">Léogâne (29 Mas)</option>
-                                <option value="Jacmel">Jacmel (26 Avril)</option>
-                            </select>
-                        </div>
-                    </div>
+      <div class="field">
+        <label>WhatsApp</label>
+        <input type="tel" name="whatsapp" required>
+      </div>
 
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Prèv Pèman (Screenshot MonCash oswa resi)</label>
-                        <div class="relative border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-blue-500 transition cursor-pointer bg-white" id="fileUploadArea">
-                            <input type="file" name="paymentProof" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" id="paymentProofInput">
-                            <div class="space-y-2" id="uploadPlaceholder">
-                                <i data-lucide="upload-cloud" class="mx-auto text-gray-400"></i>
-                                <p class="text-sm text-gray-500">Klike pou chwazi fichye a oswa rale l isit la</p>
-                                <p class="text-xs text-gray-400">JPG, PNG oswa PDF (Max 50MB)</p>
-                            </div>
-                            <div class="space-y-2 hidden" id="fileSelected">
-                                <i data-lucide="check-circle" class="mx-auto text-green-500"></i>
-                                <p class="text-sm font-semibold text-green-600" id="fileName">Fichye seleksyone</p>
-                                <p class="text-xs text-gray-500" id="fileSize">0 KB</p>
-                            </div>
-                        </div>
-                    </div>
+      <div class="field">
+        <label>Laj</label>
+        <input type="number" name="age" required>
+      </div>
 
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Avis / Kòmantè</label>
-                        <textarea name="avis" rows="3" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none transition" placeholder="Di nou kisa w espere de fòmasyon sa a..."></textarea>
-                    </div>
+      <div class="field">
+        <label>Vil</label>
+        <select name="ville" required>
+          <option value="">Chwazi...</option>
+          <option>Léogâne (29 Mas)</option>
+          <option>Jacmel (26 Avril)</option>
+        </select>
+      </div>
 
-                    <button type="submit" class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition shadow-xl transform active:scale-95">
-                        KONFIME ENSKRIPSYON MWEN
-                    </button>
-                </form>
+      <div class="field">
+        <label>Prèv Pèman</label>
+        <input type="file" name="preuve" accept=".jpg,.png,.pdf" required>
+      </div>
 
-                <div class="mt-8 pt-8 border-t border-blue-200">
-                    <p class="text-center text-gray-600 mb-4">Ou gen kesyon? Kontakte nou sou WhatsApp:</p>
-                    <div class="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="https://chat.whatsapp.com/KJUJU2x1boW1NnoII9fn27?mode=gi_t" target="_blank" class="whatsapp-green text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition shadow-lg transform hover:scale-105">
-                            <i data-lucide="users"></i> Antre nan Gwoup la
-                        </a>
-                        <a href="https://whatsapp.com/channel/0029VbCta9V1CYoVLOohLm2T" target="_blank" class="whatsapp-green text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition shadow-lg transform hover:scale-105">
-                            <i data-lucide="radio"></i> Swiv Chanèl la
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="field">
+        <label>Kòmantè</label>
+        <textarea name="commentaire"></textarea>
+      </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-12 border-b border-gray-800 pb-12 mb-12">
-                <div>
-                    <h4 class="text-xl font-bold mb-6 flex items-center gap-2">
-                        <i data-lucide="info"></i> GoConnect Haiti
-                    </h4>
-                    <p class="text-gray-400">Yon platfòm k ap travay pou konekte ayisyen ak pi bon opòtinite teknolojik yo.</p>
-                </div>
-                <div>
-                    <h4 class="text-xl font-bold mb-6">Kontak</h4>
-                    <ul class="space-y-4 text-gray-400">
-                        <li class="flex items-center gap-3"><i data-lucide="phone" size="18" class="text-blue-500"></i> +509 49 02 55 20</li>
-                        <li class="flex items-center gap-3"><i data-lucide="mail" size="18" class="text-blue-500"></i> odersonguerrier10@goconnecthaiti.com</li>
-                        <li class="flex items-center gap-3"><i data-lucide="globe" size="18" class="text-blue-500"></i> www.goconnecthaiti.com</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-xl font-bold mb-6">Swiv Nou</h4>
-                    <div class="flex gap-4">
-                        <a href="https://chat.whatsapp.com/KJUJU2x1boW1NnoII9fn27?mode=gi_t" target="_blank" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#25D366] transition"><i data-lucide="message-circle"></i></a>
-                        <a href="https://whatsapp.com/channel/0029VbCta9V1CYoVLOohLm2T" target="_blank" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#25D366] transition"><i data-lucide="radio"></i></a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition"><i data-lucide="facebook"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center text-gray-500 text-sm">
-                &copy; 2026 IA CASHFLOW by GoConnect Haiti. Tout dwa rezève.
-            </div>
-        </div>
-    </footer>
+      <button type="submit">KONFIME ENSKRIPSYON MWEN</button>
 
-    <!-- Notification Success -->
-    <div id="successModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-        <div class="bg-white rounded-3xl p-8 max-w-sm w-full text-center">
-            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i data-lucide="check" size="40" class="text-green-600"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-2">Enskripsyon Reyisi!</h3>
-            <p class="text-gray-600 mb-8">Mèsi paske w chwazi IA CASHFLOW. N ap kontakte w sou WhatsApp byento.</p>
-            <button onclick="closeModal()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700 transition">Fèmen</button>
-        </div>
-    </div>
-
-    <script>
-        // ============================================
-        // CONFIGURATION - MUST UPDATE BEFORE DEPLOYING
-        // ============================================
-        const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxQ7Z2roviG8jWNDxDOXsvyoW2RHFLbG42gVtfK0_qA2CTXAk1Hd_Dxp31naQZP8B4L/exec";
-
-        // Initialize Lucide icons
-        lucide.createIcons();
-
-        // Pre-select zone from URL parameter if present
-        function preSelectZone() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const zone = urlParams.get('zone');
-            if (zone) {
-                const zoneSelect = document.getElementById('selectedZone');
-                zoneSelect.value = zone;
-            }
-        }
-
-        // Call pre-select zone on page load
-        document.addEventListener('DOMContentLoaded', preSelectZone);
-
-        // Handle file input change
-        const paymentProofInput = document.getElementById('paymentProofInput');
-        if (paymentProofInput) {
-            paymentProofInput.addEventListener('change', function(e) {
-                if (this.files && this.files[0]) {
-                    const file = this.files[0];
-                    const fileName = file.name;
-                    const fileSize = (file.size / 1024).toFixed(2); // Convert to KB
-
-                    // Hide placeholder and show file info
-                    document.getElementById('uploadPlaceholder').classList.add('hidden');
-                    document.getElementById('fileSelected').classList.remove('hidden');
-                    document.getElementById('fileName').textContent = fileName;
-                    document.getElementById('fileSize').textContent = fileSize + ' KB';
-
-                    // Change border color to green
-                    document.getElementById('fileUploadArea').classList.add('border-green-400', 'bg-green-50');
-                    document.getElementById('fileUploadArea').classList.remove('border-gray-300');
-                } else {
-                    // Reset if file is deselected
-                    document.getElementById('uploadPlaceholder').classList.remove('hidden');
-                    document.getElementById('fileSelected').classList.add('hidden');
-                    document.getElementById('fileUploadArea').classList.remove('border-green-400', 'bg-green-50');
-                    document.getElementById('fileUploadArea').classList.add('border-gray-300');
-                }
-            });
-        }
-
-        // Convert file to Base64
-        function fileToBase64(file) {
-            return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.onload = () => resolve(reader.result);
-                reader.onerror = reject;
-                reader.readAsDataURL(file);
-            });
-        }
-
-        // Handle Form Submission
-        document.getElementById('registrationForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            const form = this;
-            const submitButton = form.querySelector('button[type="submit"]');
-            const originalText = submitButton.textContent;
-
-            // Disable button and show loading state
-            submitButton.disabled = true;
-            submitButton.textContent = 'Anvi...';
-
-            try {
-                // Get form data
-                const formData = new FormData(form);
-                const data = {
-                    nom: formData.get('nom'),
-                    prenom: formData.get('prenom'),
-                    email: formData.get('email'),
-                    telephone: '+509' + formData.get('telephone'),
-                    age: formData.get('age'),
-                    zone: formData.get('zone'),
-                    avis: formData.get('avis'),
-                    paymentProof: '' // Will be filled with Base64 below
-                };
-
-                // Convert file to Base64 if present
-                const fileInput = form.querySelector('input[name="paymentProof"]');
-                if (fileInput.files && fileInput.files[0]) {
-                    const file = fileInput.files[0];
-                    if (file.size > 50 * 1024 * 1024) { // 50MB limit
-                        throw new Error('Fichye a twò gro (Max 50MB)');
-                    }
-                    // Send just the file name, not the full Base64
-                    data.paymentProof = file.name;
-                }
-
-                // Send to Google Apps Script
-                const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify(data),
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                });
-
-                // Try parse JSON safely; if server returns non-JSON, surface a helpful error
-                let result = null;
-                try {
-                    // If response is not OK, still try to get JSON error message
-                    const text = await response.text();
-                    try {
-                        result = text ? JSON.parse(text) : {};
-                    } catch (parseErr) {
-                        throw new Error('Repons sèvè a pa retounen JSON valide: ' + text.substring(0, 200));
-                    }
-
-                    if (!response.ok) {
-                        throw new Error(result.error || ('Sèvè erè: ' + response.status + ' ' + response.statusText));
-                    }
-                } catch (err) {
-                    throw err;
-                }
-
-                if (result && result.success) {
-                    document.getElementById('successModal').classList.remove('hidden');
-                    form.reset();
-                } else {
-                    showErrorModal((result && result.error) ? result.error : 'Yon erre rive. Eseye ankò.');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                showErrorModal(error.message || 'Yon erre rive. Eseye ankò.');
-            } finally {
-                // Restore button state
-                submitButton.disabled = false;
-                submitButton.textContent = originalText;
-            }
-        });
-
-        function closeModal() {
-            document.getElementById('successModal').classList.add('hidden');
-        }
-
-        function showErrorModal(message) {
-            // Create error modal if it doesn't exist
-            let errorModal = document.getElementById('errorModal');
-            if (!errorModal) {
-                errorModal = document.createElement('div');
-                errorModal.id = 'errorModal';
-                errorModal.className = 'fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/60 backdrop-blur-sm p-4';
-                errorModal.innerHTML = `
-                    <div class="bg-white rounded-3xl p-8 max-w-sm w-full text-center">
-                        <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-10 h-10 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Yon Erre</h3>
-                        <p id="errorMessage" class="text-gray-600 mb-8"></p>
-                        <button onclick="closeErrorModal()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700 transition">Fèmen</button>
-                    </div>
-                `;
-                document.body.appendChild(errorModal);
-            }
-
-            document.getElementById('errorMessage').textContent = message;
-            errorModal.classList.remove('hidden');
-        }
-
-        function closeErrorModal() {
-            const errorModal = document.getElementById('errorModal');
-            if (errorModal) {
-                errorModal.classList.add('hidden');
-            }
-        }
-    </script>
-</body>
-</html>
+    </form>
+  </div>
+</section>
