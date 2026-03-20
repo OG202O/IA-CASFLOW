@@ -1,67 +1,71 @@
-<section id="inscription" class="registration-section">
-  <div class="form-wrapper">
-    <h2>Fòmilè Enskripsyon</h2>
-    <p>Ranpli fòm sa a pou w rezève plas ou kounye a.</p>
+<form
+  action="https://formspree.io/f/mzdjonlb"
+  method="POST"
+  enctype="multipart/form-data"
+  class="registration-form"
+>
+  <input type="hidden" name="_subject" value="Nouvelle inscription IA CASHFLOW">
+  <input type="hidden" name="_redirect" value="https://og202o.github.io/IA-CASFLOW/">
+  <input type="text" name="_gotcha" style="display:none">
 
-    <form 
-      action="https://formspree.io/f/mzdjonlb" 
-      method="POST"
-      enctype="multipart/form-data"
-      class="registration-form"
-    >
-
-      <!-- CONFIG -->
-      <input type="hidden" name="_subject" value="Nouvelle inscription IA CASHFLOW">
-      <input type="hidden" name="_redirect" value="https://og202o.github.io/IA-CASFLOW/merci.html">
-      <input type="text" name="_gotcha" style="display:none">
-
-      <!-- CHAMPS -->
-      <div class="field">
-        <label>Siyati</label>
-        <input type="text" name="signature" required>
-      </div>
-
-      <div class="field">
-        <label>Nom complet</label>
-        <input type="text" name="nom" required>
-      </div>
-
-      <div class="field">
-        <label>Email</label>
-        <input type="email" name="email" required>
-      </div>
-
-      <div class="field">
-        <label>WhatsApp</label>
-        <input type="tel" name="whatsapp" required>
-      </div>
-
-      <div class="field">
-        <label>Laj</label>
-        <input type="number" name="age" required>
-      </div>
-
-      <div class="field">
-        <label>Vil</label>
-        <select name="ville" required>
-          <option value="">Chwazi...</option>
-          <option>Léogâne (29 Mas)</option>
-          <option>Jacmel (26 Avril)</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label>Prèv Pèman</label>
-        <input type="file" name="preuve" accept=".jpg,.png,.pdf" required>
-      </div>
-
-      <div class="field">
-        <label>Kòmantè</label>
-        <textarea name="commentaire"></textarea>
-      </div>
-
-      <button type="submit">KONFIME ENSKRIPSYON MWEN</button>
-
-    </form>
+  <div class="form-group">
+    <label for="signature">Siyati</label>
+    <input type="text" id="signature" name="signature" required>
   </div>
-</section>
+
+  <div class="form-group">
+    <label for="nom">Non</label>
+    <input type="text" id="nom" name="nom" required>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+  </div>
+
+  <div class="form-group">
+    <label for="whatsapp">Telefòn (WhatsApp)</label>
+    <input
+      type="tel"
+      id="whatsapp"
+      name="whatsapp"
+      pattern="[0-9]{8}"
+      placeholder="Antre 8 nimewo san +509"
+      required
+    >
+    <small>Antre 8 nimewo san "+509"</small>
+  </div>
+
+  <div class="form-group">
+    <label for="age">Laj</label>
+    <input type="number" id="age" name="age" min="10" max="99" required>
+  </div>
+
+  <div class="form-group">
+    <label for="ville">Vil kote w prale a</label>
+    <select id="ville" name="ville" required>
+      <option value="">Chwazi yon vil...</option>
+      <option value="Léogâne (29 Mas)">Léogâne (29 Mas)</option>
+      <option value="Jacmel (26 Avril)">Jacmel (26 Avril)</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="preuve">Prèv Pèman (Screenshot MonCash oswa resi)</label>
+    <input
+      type="file"
+      id="preuve"
+      name="preuve"
+      accept=".jpg,.jpeg,.png,.pdf"
+      required
+    >
+    <small>JPG, PNG oswa PDF</small>
+  </div>
+
+  <div class="form-group">
+    <label for="commentaire">Avis / Kòmantè</label>
+    <textarea id="commentaire" name="commentaire" rows="4"></textarea>
+  </div>
+
+  <button type="submit">KONFIME ENSKRIPSYON MWEN</button>
+</form>
