@@ -1,125 +1,83 @@
-<section id="inscription" style="padding:60px 20px;background:#0f172a;color:#fff;">
-  <div style="max-width:700px;margin:auto;background:#111827;padding:30px;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,0.25);">
+<form
+  action="https://formspree.io/f/mzdjonlb"
+  method="POST"
+  class="registration-form"
+>
 
-    <h2 style="margin-bottom:10px;font-size:2rem;">Fòmilè Enskripsyon</h2>
-    <p style="margin-bottom:25px;color:#cbd5e1;">
-      Ranpli fòm sa a pou w rezève plas ou kounye a.
-    </p>
+  <!-- CONFIG -->
+  <input type="hidden" name="_subject" value="Nouvelle inscription IA CASHFLOW">
+  <input type="hidden" name="_redirect" value="https://og202o.github.io/IA-CASFLOW/">
+  <input type="text" name="_gotcha" style="display:none">
 
-    <form 
-      action="https://formspree.io/f/mzdjonlb"
-      method="POST"
-      enctype="multipart/form-data"
-      style="display:grid;gap:18px;"
-    >
-
-      <!-- CONFIG -->
-      <input type="hidden" name="_subject" value="Nouvelle inscription IA CASHFLOW">
-      <input type="hidden" name="_redirect" value="https://og202o.github.io/IA-CASFLOW/">
-      <input type="text" name="_gotcha" style="display:none">
-
-      <!-- STYLE GLOBAL -->
-      <style>
-        .form-group {
-          display:flex;
-          flex-direction:column;
-          gap:8px;
-        }
-
-        .form-group label {
-          font-weight:600;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-          width:100%;
-          padding:14px 16px;
-          border-radius:12px;
-          border:1px solid #334155;
-          background:#0b1220;
-          color:#fff;
-          outline:none;
-          box-sizing:border-box;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-          color:#94a3b8;
-        }
-
-        .form-group small {
-          color:#94a3b8;
-          font-size:0.9rem;
-        }
-
-        button {
-          padding:15px 20px;
-          border:none;
-          border-radius:12px;
-          background:#22c55e;
-          color:#08110c;
-          font-size:1rem;
-          font-weight:700;
-          cursor:pointer;
-          transition:0.2s ease;
-        }
-
-        button:hover {
-          transform:translateY(-1px);
-          opacity:0.95;
-        }
-      </style>
-
-      <!-- CHAMPS -->
-      <div class="form-group">
-        <label>Siyati</label>
-        <input type="text" name="signature" required>
-      </div>
-
-      <div class="form-group">
-        <label>Non</label>
-        <input type="text" name="nom" required>
-      </div>
-
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" name="email" required>
-      </div>
-
-      <div class="form-group">
-        <label>Telefòn (WhatsApp)</label>
-        <input type="tel" name="whatsapp" placeholder="8 chiffres san +509" required>
-        <small>Antre nimewo a san +509</small>
-      </div>
-
-      <div class="form-group">
-        <label>Laj</label>
-        <input type="number" name="age" min="10" max="99" required>
-      </div>
-
-      <div class="form-group">
-        <label>Vil kote w prale a</label>
-        <select name="ville" required>
-          <option value="">Chwazi...</option>
-          <option>Léogâne (29 Mas)</option>
-          <option>Jacmel (26 Avril)</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label>Prèv Pèman</label>
-        <input type="file" name="preuve" accept=".jpg,.png,.pdf" required>
-        <small>JPG, PNG oswa PDF</small>
-      </div>
-
-      <div class="form-group">
-        <label>Avis / Kòmantè</label>
-        <textarea name="commentaire" rows="4"></textarea>
-      </div>
-
-      <button type="submit">KONFIME ENSKRIPSYON MWEN</button>
-
-    </form>
+  <!-- NOM -->
+  <div class="form-group">
+    <label>Nom complet</label>
+    <input type="text" name="nom" required>
   </div>
-</section>
+
+  <!-- WHATSAPP -->
+  <div class="form-group">
+    <label>Telefòn WhatsApp</label>
+    <input type="tel" name="whatsapp" placeholder="8 chiffres san +509" required>
+    <small>Nou pral kontakte w sou WhatsApp</small>
+  </div>
+
+  <!-- EMAIL -->
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" name="email" required>
+  </div>
+
+  <!-- VILLE -->
+  <div class="form-group">
+    <label>Vil kote w prale a</label>
+    <select name="ville" required>
+      <option value="">Chwazi...</option>
+      <option>Léogâne (29 Mas)</option>
+      <option>Jacmel (26 Avril)</option>
+    </select>
+  </div>
+
+  <!-- METHODE PAIEMENT -->
+  <div class="form-group">
+    <label>Méthode de paiement</label>
+    <select name="methode_paiement" required>
+      <option value="">Chwazi...</option>
+      <option>MonCash</option>
+      <option>NatCash</option>
+      <option>Virement bancaire</option>
+      <option>Autre</option>
+    </select>
+  </div>
+
+  <!-- REFERENCE -->
+  <div class="form-group">
+    <label>Référence paiement</label>
+    <input
+      type="text"
+      name="reference_paiement"
+      placeholder="Ex: TX123456789"
+      required
+    >
+    <small>Mete kòd tranzaksyon ou resevwa a</small>
+  </div>
+
+  <!-- WHATSAPP PROOF -->
+  <div class="form-group">
+    <label>Confirmation paiement</label>
+    <p style="font-size:0.9rem;color:#94a3b8;">
+      Apre ou fin ranpli fòm nan, voye screenshot peman an sou WhatsApp:
+      <br><strong>+509 XXXX XXXX</strong>
+    </p>
+  </div>
+
+  <!-- COMMENT -->
+  <div class="form-group">
+    <label>Avis / Kòmantè</label>
+    <textarea name="commentaire" rows="4"></textarea>
+  </div>
+
+  <!-- SUBMIT -->
+  <button type="submit">KONFIME ENSKRIPSYON MWEN</button>
+
+</form>
