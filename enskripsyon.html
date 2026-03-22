@@ -1,83 +1,447 @@
-<form
-  action="https://formspree.io/f/mzdjonlb"
-  method="POST"
-  class="registration-form"
->
+<section id="inscription" class="registration-section">
+  <div class="registration-wrapper">
+    <div class="registration-card">
+      <h2>Fòmilè Enskripsyon</h2>
+      <p class="intro-text">
+        Ranpli fòm sa a pou w rezève plas ou pou <strong>IA CASHFLOW</strong>.
+      </p>
 
-  <!-- CONFIG -->
-  <input type="hidden" name="_subject" value="Nouvelle inscription IA CASHFLOW">
-  <input type="hidden" name="_redirect" value="https://og202o.github.io/IA-CASFLOW/">
-  <input type="text" name="_gotcha" style="display:none">
+      <div class="payment-info-box">
+        <h3>Verifikasyon peman</h3>
+        <p>
+          Pou nou valide enskripsyon ou pi vit, ranpli fòm nan ak:
+        </p>
+        <ul>
+          <li><strong>Méthode de paiement</strong></li>
+          <li><strong>Référence paiement</strong></li>
+          <li><strong>4 dènye chif nimewo ki te fè peman an</strong></li>
+        </ul>
+        <p class="mini-note">
+          Apre sa, ou ka voye screenshot peman an sou WhatsApp pou finalizasyon si sa nesesè.
+        </p>
+      </div>
 
-  <!-- NOM -->
-  <div class="form-group">
-    <label>Nom complet</label>
-    <input type="text" name="nom" required>
+      <form id="registrationForm" class="registration-form" action="https://formspree.io/f/mzdjonlb" method="POST">
+        <input type="hidden" name="_subject" value="Nouvelle inscription IA CASHFLOW">
+        <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off">
+
+        <div class="form-group">
+          <label for="nom">Nom complet</label>
+          <input type="text" id="nom" name="nom" placeholder="Antre non konplè ou" required>
+        </div>
+
+        <div class="form-group">
+          <label for="whatsapp">Telefòn WhatsApp</label>
+          <input
+            type="tel"
+            id="whatsapp"
+            name="whatsapp"
+            placeholder="Ex: 41234567"
+            pattern="[0-9]{8}"
+            maxlength="8"
+            required
+          >
+          <small>Antre 8 chif san +509</small>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="egzanp@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="age">Laj</label>
+          <input type="number" id="age" name="age" min="10" max="99" placeholder="Antre laj ou" required>
+        </div>
+
+        <div class="form-group">
+          <label for="ville">Vil kote w prale a</label>
+          <select id="ville" name="ville" required>
+            <option value="">Chwazi yon vil...</option>
+            <option value="Léogâne (29 Mas)">Léogâne (29 Mas)</option>
+            <option value="Jacmel (26 Avril)">Jacmel (26 Avril)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="niveau">Niveau ou nan IA</label>
+          <select id="niveau" name="niveau" required>
+            <option value="">Chwazi nivo ou...</option>
+            <option value="Débutant">Débutant</option>
+            <option value="Intermédiaire">Intermédiaire</option>
+            <option value="Avancé">Avancé</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="methode_paiement">Méthode de paiement</label>
+          <select id="methode_paiement" name="methode_paiement" required>
+            <option value="">Chwazi yon opsyon...</option>
+            <option value="MonCash">MonCash</option>
+            <option value="NatCash">NatCash</option>
+            <option value="Virement bancaire">Virement bancaire</option>
+            <option value="Cash">Cash</option>
+            <option value="Autre">Autre</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="reference_paiement">Référence paiement</label>
+          <input
+            type="text"
+            id="reference_paiement"
+            name="reference_paiement"
+            placeholder="Ex: TX123456789"
+            required
+          >
+          <small>Mete kòd oswa referans tranzaksyon an</small>
+        </div>
+
+        <div class="form-group">
+          <label for="last4">4 dènye chif nimewo ki te fè peman an</label>
+          <input
+            type="text"
+            id="last4"
+            name="dernier4_paiement"
+            placeholder="Ex: 4567"
+            pattern="[0-9]{4}"
+            maxlength="4"
+            required
+          >
+          <small>Sa ede nou verifye tranzaksyon an pi fasil</small>
+        </div>
+
+        <div class="form-group">
+          <label for="montant">Montant peye a</label>
+          <input
+            type="text"
+            id="montant"
+            name="montant"
+            placeholder="Ex: 1,500 HTG"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="objectif">Objektif ou ak fòmasyon an</label>
+          <textarea
+            id="objectif"
+            name="objectif"
+            rows="4"
+            placeholder="Eksplike sa w espere aprann oswa reyalize ak fòmasyon an"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="commentaire">Avis / Kòmantè</label>
+          <textarea
+            id="commentaire"
+            name="commentaire"
+            rows="4"
+            placeholder="Ekri nenpòt enfòmasyon anplis isit la"
+          ></textarea>
+        </div>
+
+        <div class="whatsapp-proof-box">
+          <p>
+            <strong>Opsyon final verifikasyon:</strong><br>
+            Apre enskripsyon an, si sa nesesè, voye screenshot peman an sou WhatsApp:
+          </p>
+          <a
+            href="https://wa.me/50900000000?text=Bonjou%2C%20mwen%20f%C3%A8%20enskripsyon%20pou%20IA%20CASHFLOW.%20Mwen%20vle%20voye%20pr%C3%A8v%20peman%20an."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="whatsapp-btn"
+          >
+            Voye sou WhatsApp
+          </a>
+          <small>Ranplase 50900000000 ak vrè nimewo WhatsApp ou.</small>
+        </div>
+
+        <button type="submit" id="submitBtn" class="submit-btn">
+          KONFIME ENSKRIPSYON MWEN
+        </button>
+
+        <p id="formMessage" class="form-message"></p>
+      </form>
+    </div>
   </div>
+</section>
 
-  <!-- WHATSAPP -->
-  <div class="form-group">
-    <label>Telefòn WhatsApp</label>
-    <input type="tel" name="whatsapp" placeholder="8 chiffres san +509" required>
-    <small>Nou pral kontakte w sou WhatsApp</small>
-  </div>
+<style>
+  .registration-section {
+    padding: 60px 20px;
+    background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+    color: #ffffff;
+  }
 
-  <!-- EMAIL -->
-  <div class="form-group">
-    <label>Email</label>
-    <input type="email" name="email" required>
-  </div>
+  .registration-wrapper {
+    max-width: 760px;
+    margin: 0 auto;
+  }
 
-  <!-- VILLE -->
-  <div class="form-group">
-    <label>Vil kote w prale a</label>
-    <select name="ville" required>
-      <option value="">Chwazi...</option>
-      <option>Léogâne (29 Mas)</option>
-      <option>Jacmel (26 Avril)</option>
-    </select>
-  </div>
+  .registration-card {
+    background: rgba(17, 24, 39, 0.96);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    border-radius: 22px;
+    padding: 32px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  }
 
-  <!-- METHODE PAIEMENT -->
-  <div class="form-group">
-    <label>Méthode de paiement</label>
-    <select name="methode_paiement" required>
-      <option value="">Chwazi...</option>
-      <option>MonCash</option>
-      <option>NatCash</option>
-      <option>Virement bancaire</option>
-      <option>Autre</option>
-    </select>
-  </div>
+  .registration-card h2 {
+    margin: 0 0 10px;
+    font-size: 2rem;
+    line-height: 1.2;
+  }
 
-  <!-- REFERENCE -->
-  <div class="form-group">
-    <label>Référence paiement</label>
-    <input
-      type="text"
-      name="reference_paiement"
-      placeholder="Ex: TX123456789"
-      required
-    >
-    <small>Mete kòd tranzaksyon ou resevwa a</small>
-  </div>
+  .intro-text {
+    margin: 0 0 24px;
+    color: #cbd5e1;
+    font-size: 1rem;
+  }
 
-  <!-- WHATSAPP PROOF -->
-  <div class="form-group">
-    <label>Confirmation paiement</label>
-    <p style="font-size:0.9rem;color:#94a3b8;">
-      Apre ou fin ranpli fòm nan, voye screenshot peman an sou WhatsApp:
-      <br><strong>+509 XXXX XXXX</strong>
-    </p>
-  </div>
+  .payment-info-box,
+  .whatsapp-proof-box {
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(34, 197, 94, 0.22);
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 22px;
+  }
 
-  <!-- COMMENT -->
-  <div class="form-group">
-    <label>Avis / Kòmantè</label>
-    <textarea name="commentaire" rows="4"></textarea>
-  </div>
+  .payment-info-box h3 {
+    margin: 0 0 10px;
+    color: #22c55e;
+    font-size: 1.05rem;
+  }
 
-  <!-- SUBMIT -->
-  <button type="submit">KONFIME ENSKRIPSYON MWEN</button>
+  .payment-info-box p,
+  .payment-info-box li,
+  .whatsapp-proof-box p,
+  .whatsapp-proof-box small {
+    color: #cbd5e1;
+  }
 
-</form>
+  .payment-info-box ul {
+    margin: 10px 0 10px 18px;
+    padding: 0;
+  }
+
+  .mini-note {
+    margin-top: 10px;
+    font-size: 0.95rem;
+  }
+
+  .registration-form {
+    display: grid;
+    gap: 18px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-group label {
+    font-weight: 600;
+    color: #f8fafc;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid #334155;
+    background: #0b1220;
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: #94a3b8;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
+    transform: translateY(-1px);
+  }
+
+  .form-group small {
+    color: #94a3b8;
+    font-size: 0.9rem;
+  }
+
+  .submit-btn,
+  .whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 16px 20px;
+    background: #22c55e;
+    color: #08110c;
+    font-size: 1rem;
+    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.22);
+  }
+
+  .submit-btn:hover,
+  .whatsapp-btn:hover {
+    transform: translateY(-1px);
+    opacity: 0.96;
+  }
+
+  .submit-btn:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .whatsapp-btn {
+    margin-top: 10px;
+    padding: 12px 18px;
+    background: #25d366;
+    color: #06110a;
+  }
+
+  .form-message {
+    margin: 6px 0 0;
+    padding: 12px 14px;
+    border-radius: 12px;
+    display: none;
+    font-size: 0.96rem;
+    line-height: 1.45;
+  }
+
+  .form-message.success {
+    display: block;
+    background: rgba(34, 197, 94, 0.12);
+    border: 1px solid rgba(34, 197, 94, 0.32);
+    color: #bbf7d0;
+  }
+
+  .form-message.error {
+    display: block;
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.32);
+    color: #fecaca;
+  }
+
+  .honeypot {
+    display: none !important;
+  }
+
+  @media (max-width: 640px) {
+    .registration-section {
+      padding: 30px 14px;
+    }
+
+    .registration-card {
+      padding: 20px;
+      border-radius: 18px;
+    }
+
+    .registration-card h2 {
+      font-size: 1.6rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea,
+    .submit-btn {
+      font-size: 16px;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    const form = document.getElementById("registrationForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const messageBox = document.getElementById("formMessage");
+
+    function showMessage(type, text) {
+      messageBox.className = "form-message " + type;
+      messageBox.textContent = text;
+    }
+
+    function clearMessage() {
+      messageBox.className = "form-message";
+      messageBox.textContent = "";
+      messageBox.style.display = "";
+    }
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      clearMessage();
+
+      const whatsapp = document.getElementById("whatsapp").value.trim();
+      const last4 = document.getElementById("last4").value.trim();
+
+      if (!/^[0-9]{8}$/.test(whatsapp)) {
+        showMessage("error", "Tanpri antre yon nimewo WhatsApp ki gen egzakteman 8 chif.");
+        return;
+      }
+
+      if (!/^[0-9]{4}$/.test(last4)) {
+        showMessage("error", "Tanpri antre 4 dènye chif nimewo ki te fè peman an.");
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Enskripsyon ap voye...";
+
+      try {
+        const formData = new FormData(form);
+
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            "Accept": "application/json"
+          }
+        });
+
+        if (response.ok) {
+          form.reset();
+          showMessage(
+            "success",
+            "Enskripsyon reyisi! Mèsi paske w enskri nan IA CASHFLOW. N ap verifye enfòmasyon ou yo epi n ap kontakte w sou WhatsApp byento."
+          );
+        } else {
+          const data = await response.json().catch(() => ({}));
+          const errorText = data.errors && data.errors.length
+            ? data.errors.map(err => err.message).join(", ")
+            : "Gen yon pwoblèm pandan voye fòm nan. Eseye ankò.";
+          showMessage("error", errorText);
+        }
+      } catch (error) {
+        showMessage(
+          "error",
+          "Nou pa t rive voye fòm nan kounye a. Verifye koneksyon entènèt ou epi eseye ankò."
+        );
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "KONFIME ENSKRIPSYON MWEN";
+      }
+    });
+  })();
+</script>
